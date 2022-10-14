@@ -1,7 +1,7 @@
-FROM node:14.15.0-alpine
+FROM alpine
+RUN apk add --update nodejs npm
 WORKDIR /app
 COPY package.json index.js /app/
-RUN npm install
-
-ENTRYPOINT ["npm", "index.js"]
+RUN npm i
+CMD ["node", "index.js"]
 
